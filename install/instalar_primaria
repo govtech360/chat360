@@ -52,7 +52,7 @@ system_create_user
 # backend related
 system_create_folder
 system_mv_folder
-system_unzip_Multizap
+system_unzip_Chat360
 backend_set_env
 backend_redis_create
 backend_node_dependencies

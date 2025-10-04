@@ -1,4 +1,4 @@
-# Whaticket versão Multizap
+# Whaticket versão Chat360
 
 O suporte a essa versão é limitado.
 
@@ -9,7 +9,7 @@ adduser deploy
 
 
 Defina uma senha segura para o usuário deploy (apenas numeros). 
-🔑: 864936729173
+🔑: 864936729173826374956286
 Pressione "Enter" para pular os campos de dados pessoais.
 
 2️⃣ Adicione o usuário "deploy" ao grupo sudo:

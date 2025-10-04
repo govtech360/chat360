@@ -11,7 +11,7 @@ get_mysql_root_password() {
 #get_link_git() {
 #  
 #  print_banner
-#  printf "${WHITE} 💻 Insira o link do GITHUB do Multizap que deseja instalar:${GRAY_LIGHT}"
+#  printf "${WHITE} 💻 Insira o link do GITHUB do Chat360 que deseja instalar:${GRAY_LIGHT}"
 #  printf "\n\n"
 #  read -p "> " link_git
 #}
@@ -201,14 +201,14 @@ software_dominio() {
 inquiry_options() {
   
   print_banner
-  printf "${WHITE} 💻 Bem vindo(a) ao Gerenciador Multizap, selecione abaixo a proxima ação!${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Bem vindo(a) ao Gerenciador Chat360, selecione abaixo a proxima ação!${GRAY_LIGHT}"
   printf "\n\n"
-  printf "   [0] Instalar Multizap\n"
-  printf "   [1] Atualizar Multizap\n"
-  printf "   [2] Deletar Multizap\n"
-  printf "   [3] Bloquear Multizap\n"
-  printf "   [4] Desbloquear Multizap\n"
-  printf "   [5] Alter. dominio Multizap\n"
+  printf "   [0] Instalar Chat360\n"
+  printf "   [1] Atualizar Chat360\n"
+  printf "   [2] Deletar Chat360\n"
+  printf "   [3] Bloquear Chat360\n"
+  printf "   [4] Desbloquear Chat360\n"
+  printf "   [5] Alter. dominio Chat360\n"
   printf "\n"
   read -p "> " option
 

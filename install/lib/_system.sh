@@ -24,13 +24,13 @@ EOF
 
 system_mv_folder() {
   print_banner
-  printf "${WHITE} 💻 Fazendo download do código Multizap...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Fazendo download do código Chat360...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
 
   sudo su - root <<EOF
-  cp "${PROJECT_ROOT}"/Multizap.zip /home/deploy/${instancia_add}/
+  cp "${PROJECT_ROOT}"/Chat360.zip /home/deploy/${instancia_add}/
 EOF
 
   sleep 2
@@ -60,15 +60,15 @@ EOF
 # Arguments:
 #   None
 #######################################
-system_unzip_Multizap() {
+system_unzip_Chat360() {
   print_banner
-  printf "${WHITE} 💻 Extraindo o Multizap...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Extraindo o Chat360...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
 
   sudo su - deploy <<EOF
-  unzip /home/deploy/${instancia_add}/Multizap.zip -d /home/deploy/${instancia_add}
+  unzip /home/deploy/${instancia_add}/Chat360.zip -d /home/deploy/${instancia_add}
 EOF
 
   sudo chmod -R 777 /home/deploy/${instancia_add}/backend/public/
@@ -82,7 +82,7 @@ EOF
 #######################################
 system_update() {
   print_banner
-  printf "${WHITE} 💻 Vamos atualizar o sistema Multizap...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos atualizar o sistema Chat360...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -104,7 +104,7 @@ EOF
 #######################################
 deletar_tudo() {
   print_banner
-  printf "${WHITE} 💻 Vamos deletar uma Instância do Multizap...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos deletar uma Instância do Chat360...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -150,7 +150,7 @@ EOF
 #######################################
 configurar_bloqueio() {
   print_banner
-  printf "${WHITE} 💻 Vamos Bloquear o Multizap...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos Bloquear o Chat360...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -177,7 +177,7 @@ EOF
 #######################################
 configurar_desbloqueio() {
   print_banner
-  printf "${WHITE} 💻 Vamos Desbloquear o Multizap de uma Instância...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos Desbloquear o Chat360 de uma Instância...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -203,7 +203,7 @@ EOF
 #######################################
 configurar_dominio() {
   print_banner
-  printf "${WHITE} 💻 Vamos alterar os domínios do Multizap de uma Instância...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos alterar os domínios do Chat360 de uma Instância...${GRAY_LIGHT}"
   printf "\n\n"
 
 sleep 2

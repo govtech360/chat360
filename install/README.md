@@ -1,4 +1,4 @@
-# Whaticket versão Multizap
+# Whaticket versão Chat360
 
 O suporte a essa versão é limitado.
 
@@ -77,7 +77,7 @@ sudo chmod -R 777 install && cd install && sudo ./instalar_nova_instancia
 
 ===================================================
 
-login: admin@admin.com </br>
+login: admin@admin.com
 senha: 123456
 
 ===================================================
