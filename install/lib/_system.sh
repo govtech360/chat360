@@ -548,6 +548,45 @@ EOF
 }
 
 #######################################
+# checks and creates swap if needed
+# Arguments:
+#   None
+#######################################
+system_check_swap() {
+  print_banner
+  printf "${WHITE} 💻 Verificando memória e swap do sistema...${GRAY_LIGHT}"
+  printf "\n\n"
+
+  sleep 2
+
+  sudo su - root <<EOF
+  # Verificar se já existe swap configurado
+  SWAP_SIZE=\$(free -m | grep Swap | awk '{print \$2}')
+  
+  if [ "\$SWAP_SIZE" -eq 0 ]; then
+    printf "${WHITE} ⚠️  Nenhum swap detectado. Criando 4GB de swap...${GRAY_LIGHT}\n"
+    
+    # Criar arquivo de swap de 4GB
+    dd if=/dev/zero of=/swapfile bs=1G count=4
+    chmod 600 /swapfile
+    mkswap /swapfile
+    swapon /swapfile
+    
+    # Adicionar ao fstab para persistir após reboot
+    if ! grep -q "/swapfile" /etc/fstab; then
+      echo "/swapfile none swap sw 0 0" >> /etc/fstab
+    fi
+    
+    printf "${WHITE} ✅ Swap de 4GB criado com sucesso!${GRAY_LIGHT}\n"
+  else
+    printf "${WHITE} ✅ Swap já configurado (\${SWAP_SIZE}MB)${GRAY_LIGHT}\n"
+  fi
+EOF
+
+  sleep 2
+}
+
+#######################################
 # installs nginx
 # Arguments:
 #   None

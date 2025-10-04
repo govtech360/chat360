@@ -36,6 +36,13 @@ frontend_node_build() {
 
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/frontend
+  
+  # Ajustar memória do Node.js no package.json para evitar OOM
+  if grep -q "max-old-space-size=8192" package.json; then
+    sed -i 's/max-old-space-size=8192/max-old-space-size=4096/g' package.json
+    printf "${WHITE} ✅ Limite de memória ajustado para 4GB${GRAY_LIGHT}\n"
+  fi
+  
   npm run build
 EOF
 
@@ -61,6 +68,13 @@ frontend_update() {
   cd /home/deploy/${empresa_atualizar}/frontend
   npm -f install
   rm -rf build
+  
+  # Ajustar memória do Node.js no package.json para evitar OOM
+  if grep -q "max-old-space-size=8192" package.json; then
+    sed -i 's/max-old-space-size=8192/max-old-space-size=4096/g' package.json
+    printf "${WHITE} ✅ Limite de memória ajustado para 4GB${GRAY_LIGHT}\n"
+  fi
+  
   npm run build
   pm2 start ${empresa_atualizar}-frontend
   pm2 save
