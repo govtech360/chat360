@@ -25,12 +25,12 @@ printf "${YELLOW}";
 
 
 printf ${YELLOW}"         SISTEMA PARA MÚLTIPLOS ATENDIMENTOS \n" 
-printf ${GREEN}"\n"
-printf ${GREEN}" M   M  U   U  L      TTTTT  III  ZZZZZ      A     PPPP \n"
-printf ${GREEN}" MM MM  U   U  L        T     I      Z      AAA    P   P \n"
-printf ${GREEN}" M M M  U   U  L        T     I     Z      AAAAA   PPPP  \n"
-printf ${GREEN}" M   M  U   U  L        T     I    Z       A   A   P     \n"
-printf ${GREEN}" M   M   UUU   LLLLLL   T    III  ZZZZZ    A   A   P     \n"
+printf ${BLUE}"\n"
+printf ${BLUE}"   CCCC  H   H    A  TTTTTTT    3333    66    000  \n"
+printf ${BLUE}"  C      H   H   A A    T          3   6     0   0 \n"
+printf ${BLUE}"  C      HHHHH  A   A   T       3333   666   0   0 \n"
+printf ${BLUE}"  C      H   H  AAAAA   T          3   6  6  0   0 \n"
+printf ${BLUE}"   CCCC  H   H  A   A   T       3333   666    000  \n"
 printf "\n" 
                                                                                                                                                          
   printf "            \033[1;33m        ";
