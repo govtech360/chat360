@@ -30,7 +30,7 @@ system_mv_folder() {
   sleep 2
 
   sudo su - root <<EOF
-  cp "${PROJECT_ROOT}"/Chat360.zip /home/deploy/${instancia_add}/
+  cp "${PROJECT_ROOT}"/Chat360.zip /home/deploy/
 EOF
 
   sleep 2
@@ -48,9 +48,8 @@ system_create_folder() {
 
   sleep 2
 
-  sudo su - deploy <<EOF 
-  mkdir ${instancia_add}
-EOF
+  # Não cria pasta aqui, será criada pela extração do ZIP
+  printf "${WHITE} 💻 Preparando para extrair arquivos...${GRAY_LIGHT}"
 
   sleep 2
 }
@@ -68,11 +67,17 @@ system_unzip_Chat360() {
   sleep 2
 
   sudo su - deploy <<EOF
-  unzip /home/deploy/${instancia_add}/Chat360.zip -d /home/deploy/${instancia_add}
+  cd /home/deploy/
+  unzip -q Chat360.zip
+  # Renomeia a pasta extraída para o nome da instância
+  if [ "${instancia_add}" != "chat360" ]; then
+    mv chat360 ${instancia_add}
+  fi
+  rm Chat360.zip
 EOF
 
   sudo chmod -R 777 /home/deploy/${instancia_add}/backend/public/
-  sleep
+  sleep 2
 }
 
 #######################################
